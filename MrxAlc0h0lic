@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Ahmed Ali Zayed | Cyberpunk Portfolio & Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#FACC15',
+                        darkBg: '#09090b',
+                        cardBg: '#121216',
+                        terminalGreen: '#22c55e'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #09090b; color: #f4f4f5; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        .neon-glow { text-shadow: 0 0 10px rgba(250,204,21,0.6), 0 0 20px rgba(250,204,21,0.4); }
+        .neon-box { box-shadow: 0 0 15px rgba(250,204,21,0.15); border: 1px solid rgba(250,204,21,0.3); }
+        .neon-box:hover { box-shadow: 0 0 25px rgba(250,204,21,0.35); border-color: rgba(250,204,21,0.8); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FACC15; }
+    </style>
+</head>
+<body class="bg-darkBg text-zinc-100 min-h-screen relative overflow-x-hidden">
+    <canvas id="matrix-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-20"></canvas>
+    
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-neon/10 border border-neon/50 flex items-center justify-center text-neon font-bold font-mono text-lg shadow-[0_0_10px_rgba(250,204,21,0.3)]">YA</div>
+                <div><span class="font-bold text-lg tracking-wider text-white">Youssef Ahmed</span><span class="block text-xs font-mono text-neon">@MRxAlcoholic</span></div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-neon transition">About</a>
+                <a href="#terminal" class="hover:text-neon transition">Terminal</a>
+                <a href="#skills" class="hover:text-neon transition">Skills</a>
+                <a href="#experience" class="hover:text-neon transition">Experience</a>
+                <a href="#arcade" class="hover:text-neon transition text-neon flex items-center gap-1 font-bold"><i class="fa-solid fa-gamepad"></i> Arcade</a>
+                <a href="#readme" class="hover:text-neon transition">README Generator</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon/10 border border-neon/30 text-neon text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span> Business Technology & Cybersecurity Enthusiast
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">Hi, I'm <span class="text-neon neon-glow">Youssef Ahmed</span></h1>
+            <p class="text-lg text-zinc-400 mb-8 leading-relaxed">
+                Student at <span class="text-white font-semibold">Canadian International College (CIC)</span>. Specialized in reverse engineering, penetration testing, CTF competitions (NileCTF 3rd Place), hardware maintenance, and operations leadership.
+            </p>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                <a href="#terminal" class="px-6 py-3 rounded-xl bg-neon text-darkBg font-bold hover:bg-yellow-400 transition shadow-[0_0_20px_rgba(250,204,21,0.4)] flex items-center gap-2"><i class="fa-solid fa-terminal"></i> Open Terminal</a>
+                <a href="#arcade" class="px-6 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 font-bold hover:border-neon hover:text-neon transition flex items-center gap-2"><i class="fa-solid fa-gamepad text-neon"></i> Play Arcade</a>
+            </div>
+        </div>
+        <div class="w-full max-w-lg bg-cardBg border border-zinc-800 rounded-2xl p-4 shadow-2xl neon-box">
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-800 mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                    <span class="ml-2 text-xs font-mono text-zinc-400">youssif@archlinux:~</span>
+                </div>
+                <span class="text-xs font-mono text-neon">zsh</span>
+            </div>
+            <div class="font-mono text-sm text-left space-y-2 text-zinc-300">
+                <p><span class="text-neon">➜</span> <span class="text-cyan-400">~</span> neofetch</p>
+                <p class="text-zinc-300">OS: Arch Linux x86_64 (Hyprland)</p>
+                <p class="text-zinc-300">CTF Team: <span class="text-neon font-bold">Crack heads (NileCTF 3rd)</span></p>
+                <p class="text-zinc-300">Hardware: Arduino, ESP32, KiCad, EAGLE</p>
+                <p class="animate-pulse text-neon">_</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="terminal" class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-2">Interactive Terminal</h2>
+            <p class="text-zinc-400 font-mono text-sm">Type <span class="text-neon">help</span>, <span class="text-neon">skills</span>, <span class="text-neon">ctf</span>, <span class="text-neon">hardware</span>, <span class="text-neon">contact</span>, or <span class="text-neon">matrix</span></p>
+        </div>
+        <div class="bg-cardBg border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden neon-box">
+            <div class="bg-zinc-900 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="w-3 h-3 rounded-full bg-yellow-500"></span><span class="w-3 h-3 rounded-full bg-green-500"></span><span class="ml-2 font-mono text-xs text-zinc-400">youssifahmed0208@arch</span></div>
+                <button onclick="clearTerminal()" class="text-xs font-mono text-zinc-400 hover:text-neon transition">clear</button>
+            </div>
+            <div id="terminal-output" class="p-6 font-mono text-sm h-80 overflow-y-auto space-y-3 text-zinc-300">
+                <p class="text-neon">Welcome to Youssef Ahmed's Interactive Shell v2.6.0</p>
+                <p class="text-zinc-400">Type <span class="text-neon font-bold">help</span> to view available system commands.</p>
+            </div>
+            <div class="p-4 bg-zinc-900/80 border-t border-zinc-800 flex items-center gap-2">
+                <span class="text-neon font-mono font-bold">youssif@arch:~$</span>
+                <input id="terminal-input" type="text" placeholder="Type a command..." class="bg-transparent flex-1 font-mono text-sm text-zinc-100 focus:outline-none" onkeydown="handleTerminalInput(event)">
+                <button onclick="executeCommand()" class="px-4 py-1.5 bg-neon text-darkBg font-bold font-mono text-xs rounded hover:bg-yellow-400 transition">RUN</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="arcade" class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-2 flex items-center justify-center gap-2"><i class="fa-solid fa-gamepad text-neon"></i> Cyber Arcade: Pac-Byte</h2>
+            <p class="text-zinc-400 text-sm">Navigate the maze, dodge malware bugs, and gobble up fluorescent yellow data pellets!</p>
+        </div>
+        <div class="bg-cardBg border border-zinc-800 rounded-2xl p-6 text-center neon-box">
+            <div class="flex items-center justify-between mb-4 font-mono text-sm">
+                <div>SCORE: <span id="game-score" class="text-neon font-bold">0</span></div>
+                <div>STATUS: <span id="game-status" class="text-cyan-400 font-bold">PRESS START</span></div>
+                <div>LIVES: <span id="game-lives" class="text-red-500 font-bold">❤️❤️❤️</span></div>
+            </div>
+            <div class="relative bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden mx-auto max-w-[500px] h-[350px] flex items-center justify-center">
+                <canvas id="arcade-canvas" width="500" height="350" class="block"></canvas>
+                <div id="arcade-overlay" class="absolute inset-0 bg-darkBg/90 flex flex-col items-center justify-center p-6 text-center">
+                    <h3 class="text-2xl font-bold text-neon mb-2 font-mono">PAC-BYTE ADVENTURE</h3>
+                    <p class="text-zinc-400 text-sm mb-6 max-w-sm">Use Arrow Keys to guide Pac-Byte through network nodes and collect data packets while avoiding firewall malware bugs.</p>
+                    <button onclick="startArcadeGame()" class="px-6 py-3 bg-neon text-darkBg font-bold font-mono rounded-xl hover:bg-yellow-400 transition shadow-[0_0_15px_rgba(250,204,21,0.5)]">START GAME</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas); resizeCanvas();
+        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*#@&_';
+        const fontSize = 14; let columns = canvas.width / fontSize; const drops = [];
+        for (let i = 0; i < columns; i++) drops[i] = 1;
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(9, 9, 11, 0.08)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#FACC15'; ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 40);
+
+        const terminalOutput = document.getElementById('terminal-output');
+        const terminalInput = document.getElementById('terminal-input');
+        const commandsInfo = {
+            help: "Commands: help, about, skills, ctf, hardware, contact, matrix, clear",
+            about: "Youssef Ahmed Ali Zayed — Business Technology student at CIC (2026-2030). Cybersecurity, CTF, and hardware enthusiast.",
+            skills: "Languages: Python, C, C++, Assembly | Security: Ghidra, x64dbg, OSINT | Systems: Arch Linux, KiCad, EAGLE, Arduino/ESP32",
+            ctf: "NileCTF 2026 Online Round - 3rd Place with team 'Crack heads' (youssifahmed0208).",
+            hardware: "Experience with motor troubleshooting, electrical wiring, Flow Pack machines, and PCB design in KiCad and EAGLE.",
+            contact: "Email: youssifvwahmed@gmail.com | Phone: +20 112 094 0598 | GitHub: github.com/MRxAlcoholic",
+            matrix: "Initiating neural matrix stream..."
+        };
+        function handleTerminalInput(e) { if (e.key === 'Enter') executeCommand(); }
+        function executeCommand() {
+            const cmd = terminalInput.value.trim().toLowerCase();
+            if (!cmd) return;
+            appendTerminalLine(`youssif@arch:~$ ${terminalInput.value}`, 'text-zinc-100');
+            if (cmd === 'clear') terminalOutput.innerHTML = '';
+            else if (commandsInfo[cmd]) {
+                appendTerminalLine(commandsInfo[cmd], 'text-neon');
+                if (cmd === 'matrix') confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
+            } else appendTerminalLine(`zsh: command not found: ${cmd}. Type 'help'`, 'text-red-400');
+            terminalInput.value = ''; terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+        function appendTerminalLine(text, className) { const p = document.createElement('p'); p.className = className; p.textContent = text; terminalOutput.appendChild(p); }
+        function clearTerminal() { terminalOutput.innerHTML = ''; }
+
+        let gameInterval, score = 0, lives = 3, gameRunning = false;
+        const acCanvas = document.getElementById('arcade-canvas');
+        const acCtx = acCanvas.getContext('2d');
+        const arcadeOverlay = document.getElementById('arcade-overlay');
+        let player = { x: 240, y: 160, size: 16, speed: 4, dx: 0, dy: 0 };
+        let pellets = [], bugs = [];
+        function startArcadeGame() {
+            arcadeOverlay.classList.add('hidden'); score = 0; lives = 3; gameRunning = true;
+            document.getElementById('game-score').textContent = score;
+            document.getElementById('game-lives').textContent = '❤️❤️❤️';
+            document.getElementById('game-status').textContent = 'PLAYING';
+            pellets = []; for (let i = 0; i < 20; i++) pellets.push({ x: Math.random() * 460 + 20, y: Math.random() * 310 + 20 });
+            bugs = [{ x: 50, y: 50, dx: 2, dy: 1, size: 14 }, { x: 450, y: 280, dx: -2, dy: -1.5, size: 14 }];
+            if (gameInterval) clearInterval(gameInterval);
+            gameInterval = setInterval(updateGame, 1000 / 30);
+        }
+        function updateGame() {
+            if (!gameRunning) return;
+            player.x += player.dx; player.y += player.dy;
+            if (player.x < 10) player.x = 10; if (player.x > acCanvas.width - 10) player.x = acCanvas.width - 10;
+            if (player.y < 10) player.y = 10; if (player.y > acCanvas.height - 10) player.y = acCanvas.height - 10;
+            bugs.forEach(bug => {
+                bug.x += bug.dx; bug.y += bug.dy;
+                if (bug.x < 10 || bug.x > acCanvas.width - 10) bug.dx *= -1;
+                if (bug.y < 10 || bug.y > acCanvas.height - 10) bug.dy *= -1;
+                if (Math.hypot(player.x - bug.x, player.y - bug.y) < 20) {
+                    lives--; document.getElementById('game-lives').textContent = '❤️'.repeat(Math.max(0, lives));
+                    player.x = 240; player.y = 160; player.dx = 0; player.dy = 0;
+                    if (lives <= 0) endGame("GAME OVER");
+                }
+            });
+            pellets.forEach((p, index) => {
+                if (Math.hypot(player.x - p.x, player.y - p.y) < 18) {
+                    pellets.splice(index, 1); score += 10; document.getElementById('game-score').textContent = score;
+                    if (pellets.length === 0) { endGame("VICTORY!"); confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } }); }
+                }
+            });
+            acCtx.fillStyle = '#09090b'; acCtx.fillRect(0, 0, acCanvas.width, acCanvas.height);
+            acCtx.fillStyle = '#FACC15'; pellets.forEach(p => { acCtx.beginPath(); acCtx.arc(p.x, p.y, 4, 0, Math.PI * 2); acCtx.fill(); });
+            acCtx.beginPath(); acCtx.arc(player.x, player.y, player.size, 0, Math.PI * 2); acCtx.fill();
+            acCtx.fillStyle = '#ef4444'; bugs.forEach(bug => { acCtx.beginPath(); acCtx.arc(bug.x, bug.y, bug.size, 0, Math.PI * 2); acCtx.fill(); });
+        }
+        function endGame(statusText) {
+            gameRunning = false; clearInterval(gameInterval);
+            document.getElementById('game-status').textContent = statusText;
+            arcadeOverlay.classList.remove('hidden');
+            document.querySelector('#arcade-overlay h3').textContent = statusText;
+            document.querySelector('#arcade-overlay button').textContent = 'PLAY AGAIN';
+        }
+        window.addEventListener('keydown', e => {
+            if (!gameRunning) return;
+            if (e.key === 'ArrowUp') { player.dx = 0; player.dy = -player.speed; }
+            if (e.key === 'ArrowDown') { player.dx = 0; player.dy = player.speed; }
+            if (e.key === 'ArrowLeft') { player.dx = -player.speed; player.dy = 0; }
+            if (e.key === 'ArrowRight') { player.dx = player.speed; player.dy = 0; }
+        });
+    </script>
+</body>
+</html>
